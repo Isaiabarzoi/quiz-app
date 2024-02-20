@@ -20,7 +20,7 @@ export default function Quiz() {
   []);
 
   if (isCompleted) {
-    return <QuizSummary />;
+    return <QuizSummary answers={answers} />;
   }
 
   return (
