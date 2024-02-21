@@ -19,17 +19,17 @@ export default function Quiz() {
   },
   []);
 
-  if (isCompleted) {
-    return <QuizSummary answers={answers} />;
-  }
-
   return (
     <div id="quiz">
-      <Question
-        key={activeQuestion}
-        index={activeQuestion}
-        onHandleAnswer={handleSelectAnswer}
-      />
+      {isCompleted ? (
+        <QuizSummary answers={answers} />
+      ) : (
+        <Question
+          key={activeQuestion}
+          index={activeQuestion}
+          onHandleAnswer={handleSelectAnswer}
+        />
+      )}
     </div>
   );
 }
